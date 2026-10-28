@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flask Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            width: 350px;
+            margin: 50px auto;
+        }
+
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+        }
+
+        .result {
+            margin-top: 15px;
+            font-size: 20px;
+            font-weight: bold;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <h2>Simple Calculator</h2>
+
+    <form method="POST">
+        <input type="number" step="any" name="num1" placeholder="First Number" required>
+
+        <select name="operation">
+            <option value="+">Addition (+)</option>
+            <option value="-">Subtraction (-)</option>
+            <option value="*">Multiplication (*)</option>
+            <option value="/">Division (/)</option>
+        </select>
+
+        <input type="number" step="any" name="num2" placeholder="Second Number" required>
+
+        <button type="submit">Calculate</button>
+    </form>
+
+    {% if result is not none %}
+    <div class="result">
+        Result: {{ result }}
+    </div>
+    {% endif %}
+</body>
+</html>
